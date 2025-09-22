@@ -1,0 +1,42 @@
+/* Basic styling for the page */
+body {
+    background-color: #FDFDFA; /* Off-white background */
+    font-family: 'Poppins', sans-serif; /* Use a nice, clean font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* The main container for our content */
+.container {
+    text-align: center;
+}
+
+/* The word display */
+#wordDisplay {
+    font-size: 5rem; /* Large font size */
+    font-weight: 600;
+    color: #4A90E2; /* A soft blue */
+    margin-bottom: 30px;
+    min-height: 80px; /* Prevents button from jumping */
+}
+
+/* The generate button */
+#generateButton {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* A simple hover effect for the button */
+#generateButton:hover {
+    background-color: #357ABD;
+}
