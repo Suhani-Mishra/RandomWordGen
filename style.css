@@ -1,42 +1,85 @@
-/* Basic styling for the page */
+/* Define your color variables for the default (light) theme */
+:root {
+  --primary-color: #4A90E2;
+  --secondary-color: #777;
+  --background-color: #FDFDFA;
+  --text-color: #333;
+  --button-text-color: #FFF;
+}
+
+/* Define variables for the dark theme */
+body.dark-mode {
+  --primary-color: #1E88E5;
+  --secondary-color: #555;
+  --background-color: #121212;
+  --text-color: #E0E0E0;
+  --button-text-color: #FFF;
+}
+
+/* --- Main Styles --- */
+
 body {
-    background-color: #FDFDFA; /* Off-white background */
-    font-family: 'Poppins', sans-serif; /* Use a nice, clean font */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: #333;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* The main container for our content */
 .container {
     text-align: center;
 }
 
-/* The word display */
 #wordDisplay {
-    font-size: 5rem; /* Large font size */
+    color: var(--primary-color);
     font-weight: 600;
-    color: #4A90E2; /* A soft blue */
     margin-bottom: 30px;
-    min-height: 80px; /* Prevents button from jumping */
+    min-height: 80px;
+    /* Fluid font size: clamp(MIN, PREFERRED, MAX) */
+    font-size: clamp(3rem, 10vw + 1rem, 6rem);
+    /* Transition for opacity animation */
+    transition: opacity 0.3s ease-in-out;
 }
 
-/* The generate button */
-#generateButton {
-    background-color: #4A90E2;
-    color: white;
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* --- Button Styles --- */
+
+#generateButton, #copyButton {
+    color: var(--button-text-color);
     border: none;
     padding: 15px 30px;
     font-size: 1.2rem;
-    border-radius: 50px; /* Rounded corners */
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
-/* A simple hover effect for the button */
+#generateButton {
+    background-color: var(--primary-color);
+}
+
 #generateButton:hover {
-    background-color: #357ABD;
+    background-color: #357ABD; /* A static hover color is fine */
+}
+
+#generateButton:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+#copyButton {
+    background-color: var(--secondary-color);
+}
+
+#copyButton:hover {
+    background-color: #555;
 }
